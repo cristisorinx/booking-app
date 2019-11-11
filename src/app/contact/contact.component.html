@@ -1,0 +1,147 @@
+<div id="mainContainer">
+    
+    <h3 class="col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-3 text-center">Contact us for any kind of problem you may encounter using this application.</h3>
+
+    <div class="container" id="alert">
+        <div class="alert alert-danger 
+                    col-md-8 col-md-offset-2
+                    col-sm-8 col-sm-offset-2
+                    col-xs-8 col-xs-offset-2" *ngIf="error">
+            <p class="text-center">{{ error }}</p>
+        </div>
+        <div class="alert alert-success 
+                    col-md-8 col-md-offset-2
+                    col-sm-8 col-sm-offset-2
+                    col-xs-8 col-xs-offset-2" *ngIf="message">
+            <p class="text-center">{{ message }}</p>
+        </div>
+    </div>
+
+    <div class="container container-fluid">
+    <form 
+    [formGroup]="contactForm" 
+    class="col-sm-12 col-sm-offset-1 col-md-11 col-md-offset-2 "
+    (ngSubmit)="onSubmit()">
+        <div formGroupName="userData">
+            <div class="col-sm-5">
+                <label>First Name</label>
+                <input 
+                type="text" 
+                formControlName="firstName"
+                class="form-control"
+                placeholder="First Name">
+                <span 
+                *ngIf="!contactForm.get('userData.firstName').valid && contactForm.get('userData.firstName').touched"
+                >Please insert your first name.</span>
+            </div>
+
+            <div class="form-group col-sm-5">
+                <label>Last Name</label>
+                <input 
+                type="text" 
+                class="form-control" 
+                formControlName="lastName" 
+                placeholder="Last Name">
+                <span 
+                *ngIf="!contactForm.get('userData.lastName').valid && contactForm.get('userData.lastName').touched"
+                >Please insert your last name.</span>
+            </div>
+        </div>
+        
+        <div formGroupName="universityData">
+            <div class="form-group col-sm-4 col-md-3">
+                <label>University</label>
+                <input 
+                type="text" 
+                class="form-control"
+                formControlName="university"  
+                placeholder="University">
+                <span 
+                *ngIf="!contactForm.get('universityData.university').valid && contactForm.get('universityData.university').touched"
+                >Please insert your university name.</span>
+            </div>
+            <div class="form-group col-sm-3 col-md-2">
+                <label>Unic Number</label>
+                <input 
+                type="text" 
+                class="form-control"
+                formControlName="unicNumber"  
+                placeholder="Unic Number">
+                <span 
+                *ngIf="!contactForm.get('universityData.unicNumber').valid && contactForm.get('universityData.unicNumber').touched"
+                >Please insert your unic number.</span>
+            </div>
+            <div class="form-group col-sm-3 col-md-2">
+                <label>Problem Type</label>
+                <select 
+                class="form-control"
+                formControlName="problemType"
+                >
+                    <option *ngFor="let opt of problemsType" [value]="opt">{{ opt }}</option>
+                </select>
+                <span 
+                *ngIf="!contactForm.get('universityData.problemType').valid && contactForm.get('universityData.problemType').touched"
+                >Please select your problem type.</span>
+            </div>
+        </div>
+        <div formGroupName="userData" class="col-sm-5 col-md-3">
+            <label>Email</label>
+            <input 
+            type="text" 
+            class="form-control"
+            formControlName="email"  
+            placeholder="Email">
+            <span 
+            *ngIf="!contactForm.get('userData.email').valid && contactForm.get('userData.email').touched"
+            >Please insert a valid email.</span>
+        </div>
+
+        <!-- <div class="form-row"> -->
+            <div class="form-group col-sm-10">
+                <label>Describe The Problem You Encounter</label>
+                <small class="form-text text-muted"> (Describe the problem as well as possible.)</small>
+                <textarea 
+                class="form-control"
+                formControlName="problem"  
+                rows="4"
+                placeholder="Type here" ></textarea>
+                <span 
+                *ngIf="!contactForm.get('problem').valid && contactForm.get('problem').touched"
+                >Please describe the problem you encounter.</span>
+            </div>
+        <!-- </div> -->
+
+        <div class="form-row col-sm-6 col-xs-12">
+            <div class="form-check ">
+                <input 
+                class="form-check-input" 
+                type="checkbox" 
+                formControlName="agreed">
+                <label class="form-check-label">
+                    Agree to <a (click) = "displayTerms()">terms & data policies </a>
+                </label>
+            </div>
+            <button type="submit" [disabled]="!contactForm.valid" class="btn btn-primary">Send</button>
+        </div>
+    </form>
+    
+    <div class="container">
+        <div 
+        class="row 
+        col-xs-12 col-xs-offset-0 
+        col-sm-10 col-sm-offset-1 
+        col-md-9 col-md-offset-2 
+        col-lg-9 col-lg-offset-2 
+        text-center"
+        *ngIf = "displayed"
+        id="terms">
+            Anim pariatur cliche reprehenderit, 
+            enim eiusmod high life accusamus terry richardson ad squid.
+            3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+            Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+            sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+        </div>
+    </div>     
+    </div>
+    
+</div>

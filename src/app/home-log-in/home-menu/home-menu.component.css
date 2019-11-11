@@ -1,0 +1,19 @@
+div ul{
+    /* opacity: 0.8; */
+    background-color: #0c1c29e8;
+    color: white;
+    padding-bottom: 80px;
+    padding-top: 10px;
+}
+
+li>a {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+li>a:hover {
+    font-style: italic;
+    font-weight: bold;
+    color: #0c1c29e8;
+}

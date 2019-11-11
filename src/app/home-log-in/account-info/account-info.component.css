@@ -1,0 +1,11 @@
+form {
+    display: block;
+}
+#editButton{    
+    padding-left: 15px;
+}
+
+.row{
+    margin: auto;
+    padding: 0;
+}

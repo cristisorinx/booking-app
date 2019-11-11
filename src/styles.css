@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    /* background-image: url('./image/ball-state-university.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; */
+
+    background-color: #f0f0f0;
+    /* background-image: radial-gradient(rgb(43, 40, 73) , #292b74 ); */
+
+}

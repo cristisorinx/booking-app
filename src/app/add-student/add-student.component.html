@@ -1,0 +1,98 @@
+<!-- <app-header1></app-header1> -->
+<div class="container">
+    <div class="row">
+            <div class="col-md-4"></div>
+            <form class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0" (ngSubmit)="onSubmit()" #reg="ngForm"> 
+                    <div class="form-group">
+                      <label for="">First name</label>
+                      <input 
+                      ngModel
+                      type="text" 
+                      class="form-control" 
+                      placeholder="First Name"
+                      name="fisrtName"
+                      required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Last name</label>
+                        <input 
+                        ngModel
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Last Name"
+                        name="lastName"
+                        required
+                        >
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="">Phone number</label>
+                      <input 
+                      ngModel
+                      type="phone" 
+                      class="form-control" 
+                      placeholder="Phone number"
+                      name="phoneNumber"
+                      required
+                      >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">Age</label>
+                        <input 
+                        ngModel
+                        type="number" 
+                        class="form-control" 
+                        placeholder="Your age"
+                        name="age"
+                        required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                      <label for="">CNP</label>
+                      <input 
+                      ngModel
+                      type="text" 
+                      class="form-control" 
+                      placeholder="CNP"
+                      name="CNP"
+                      required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Unic serial number</label>
+                        <input 
+                        ngModel
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Unic serial number"
+                        name="usNumber"
+                        required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Student dorm</label>
+                        <input 
+                        ngModel
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Student's dorm"
+                        name="studentDorm"
+                        required
+                        >
+                    </div>
+
+                    <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="false"
+                    >Register</button>
+            </form>
+
+            <div class="col-md-4"></div>
+    </div>
+</div>

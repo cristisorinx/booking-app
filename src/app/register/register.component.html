@@ -1,0 +1,131 @@
+<!-- <app-header1></app-header1> -->
+<div class="container">
+    <div class="row">
+        <div class="alert alert-danger col-sm-4 col-sm-offset-4" *ngIf="error">
+            <p class="text-center">{{ error }}</p>
+        </div>
+            <form class="col-md-4 col-sm-6 col-sm-offset-4 col-md-offset-4" (ngSubmit)="onSubmit()" #f="ngForm" > 
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Email</label>
+                      <input 
+                      ngModel
+                      type="email" 
+                      class="form-control" 
+                      placeholder="Enter email"
+                      name="email"
+                      required
+                      email
+                      #email="ngModel"
+                      >
+                      <small class="form-text text-muted">You'll use your email to log in.</small>
+                      <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email !</span>
+                    </div>
+            
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input 
+                      ngModel
+                      type="password" 
+                      class="form-control" 
+                      placeholder="Password"
+                      name="password"
+                      required
+                      minlength="8"
+                      >
+                      <small class="form-text text-muted">Must contain at least 8 characters.</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Confirm Password</label>
+                        <input 
+                        ngModel
+                        type="password" 
+                        class="form-control" 
+                        placeholder="Confirm Password"
+                        name="confirmedPassword"
+                        required
+                        minlength="8"
+                        >
+                      <small class="form-text text-muted">Must be the same Password as above.</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Unic Serial Number</label>
+                      <input 
+                        ngModel
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Unic Serial Number"
+                        name="usNumber"
+                        required
+                        #usNumber="ngModel"
+                        [disabled]="isValid">
+
+                      <small class="form-text text-muted" 
+                        *ngIf="(!isValid)">
+                        Given by your University. * Example:  LM123456. *</small>
+                      <div class="alert alert-success text-center" 
+                        *ngIf="(isValid)">
+                        Your serial number is valid !</div>
+                      <div class="alert alert-danger text-center" 
+                        *ngIf="(alreadyRegistred)">
+                        Your serial number is already registred. Please contact us for support.</div>
+                    </div>
+
+                    <div >
+                      <input
+                      type="checkbox" 
+                      class="form-check-input" 
+                      id="validate"
+                      required
+                      (change)="onCheck($event)"
+                      [disabled]="!usNumber.touched && !usNumber.valid"
+                      >
+                      <label 
+                      class="form-check-label" 
+                      > Validate Unic Serial Number.  </label>
+                    </div>
+                      
+                    <div class="form-group form-check">
+                      <input 
+                      ngModel
+                      type="checkbox" 
+                      class="form-check-input"
+                      name="checked"
+                      required
+                      >
+                      <label 
+                      class="form-check-label" 
+                      >Agree to <a (click) = "displayTerms()">terms & conditions</a> </label>
+                    </div>
+            
+                    <button 
+                    type="submit" 
+                    class="btn btn-primary"
+                    [disabled]="!f.valid  || !(isValid)"
+                    >Register</button>
+                    <!-- <button 
+                    type="button" 
+                    class="btn btn-primary"
+                    (click) ="validate()"
+                    >validate</button> -->
+                    
+            </form>
+
+            <div class="container">
+              <div class="col-md-4 col-sm-3"></div>
+              <div 
+              class="row col-md-4 col-sm-6 text-center"
+              *ngIf = "display"
+              id="terms">
+                  Anim pariatur cliche reprehenderit, 
+                  enim eiusmod high life accusamus terry richardson ad squid.
+                  3 wolf moon officia aute, non cupidatat skateboard dolor brunch.
+                  Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
+              </div>
+              <div class="col-md-4"></div>
+            </div>
+
+    </div>
+</div>

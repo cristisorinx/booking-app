@@ -1,0 +1,86 @@
+<!-- <div class="container"> -->
+    <h2 class="">Your account information:</h2>
+    <div class="row col-md-8">
+        <form [formGroup]="infoForm">
+            <div class="form-group col-md-6">
+                <label>First name</label>
+                <input  
+                type="text" 
+                class="form-control"
+                formControlName="firstName"
+                name="firstName"
+                [readonly] ="viewMode"
+                >
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label>Last name</label>
+                <input  
+                type="text" 
+                class="form-control" 
+                formControlName="lastName"
+                name="lastName"
+                [readonly] ="viewMode"
+                >
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label>CNP</label>
+                <input  
+                type="text" 
+                class="form-control"
+                formControlName="CNP" 
+                name="CNP"
+                [readonly] ="viewMode"
+                >
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label>Age</label>
+                <input  
+                type="text" 
+                class="form-control" 
+                formControlName="age"
+                name="age"
+                [readonly] ="viewMode"
+                >
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label>Phone number</label>
+                <input  
+                type="text" 
+                class="form-control" 
+                formControlName="phoneNumber"
+                name="phoneNumber"
+                [readonly] ="viewMode"
+                >
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label>Student dorm</label>
+                <input  
+                type="text" 
+                class="form-control"
+                formControlName="studDorm"
+                name="studDorm"
+                >
+            </div>
+    
+            <div class="form-group col-md-6">
+                <label>Serial number</label>
+                <input  
+                type="text" 
+                class="form-control"
+                formControlName="serialNumber" 
+                name="serialNumber"
+                >
+            </div>
+        </form>
+        <div class="col-md-12" id="editButton">
+            <button class="btn btn-primary" (click)="onEdit()" [disabled]="!viewMode">Edit</button> |
+            <button class="btn btn-primary" (click)="onSave()" [disabled]="viewMode">Save</button>
+        </div>
+        
+    </div>
+<!-- </div> -->
