@@ -14,8 +14,8 @@ export class HeaderComponent implements OnInit , OnDestroy {
   private userSub: Subscription;
 
   constructor(private authService: AuthService,
-      private router: Router,
-      private route: ActivatedRoute) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.userSub = this.authService.user.subscribe(user => {
@@ -23,11 +23,10 @@ export class HeaderComponent implements OnInit , OnDestroy {
     });
   }
 
-  onLogOut(){
+  onLogOut() {
     this.authService.logout();
   }
-  
-  navTo(){
+  navTo() {
     this.router.navigate(['auth'], {relativeTo: this.route});
   }
   ngOnDestroy() {

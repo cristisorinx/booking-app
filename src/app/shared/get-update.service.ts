@@ -11,39 +11,39 @@ export class GetUpdateService {
 
   sudentArray: Student [] = [];
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getStudents(){
-    return this.http.get<{[key:string] : Student}>(
+    return this.http.get<{[key: string]: Student}>(
       'https://booking-app-11aa6.firebaseio.com/primaryDb.json')
       .pipe(map(respData =>{
       const regArray: Student [] = [];
 
-      for( const key in respData){
+      // tslint:disable-next-line: forin
+      for ( const key in respData){
         regArray.push({...respData[key] , id: key});
       }
-      console.log('reg ' + regArray);
-      
+
       return regArray;
       })
     )
   }
 
-  registerUserData(registerForm : NgForm){
+  registerUserData(registerForm: NgForm){
     return this.http.post(
-      'https://booking-app-11aa6.firebaseio.com/registredUsers.json', 
+      'https://booking-app-11aa6.firebaseio.com/registredUsers.json',
       registerForm.value
       );
   }
 
-  updatePrimaryDb(key:string){    
+  updatePrimaryDb(key: string){
     return this.http.patch('https://booking-app-11aa6.firebaseio.com/primaryDb/'+key+'.json',{
       "registred": true
     });
   }
 
-  updateStudentData(key:string, data:FormGroup){    
-    return this.http.patch('https://booking-app-11aa6.firebaseio.com/primaryDb/'+key+'.json', {
+  updateStudentData(key: string, data: FormGroup){
+    return this.http.patch('https://booking-app-11aa6.firebaseio.com/primaryDb/' + key + '.json', {
       "CNP": data.value.CNP,
       "age": data.value.age,
       "firstName": data.value.firstName,
@@ -56,8 +56,10 @@ export class GetUpdateService {
     return this.http.get('https://booking-app-11aa6.firebaseio.com/registredUsers.json')
       .pipe(map( respData => {
         const usersArray: any [] = [];
-        for(let key in respData)
+        // tslint:disable-next-line: forin
+        for (const key in respData) {
           usersArray.push(respData[key]);
+        }
 
         return usersArray;
       }
@@ -67,6 +69,19 @@ export class GetUpdateService {
   registerProblem(contactForm: FormGroup){
     return this.http.post(
       'https://booking-app-11aa6.firebaseio.com/problemsDb.json',contactForm.value);
+  }
+
+  getStudentDormInfo(studentDorm: string){
+    return this.http.get('https://booking-app-11aa6.firebaseio.com/' + studentDorm + '.json')
+    .pipe(map( respData => {
+      // const dormInfo: any [] = [];
+      // // tslint:disable-next-line: forin
+      // for (const key in respData) {
+      //   dormInfo.push(respData[key]);
+      // }
+
+      return respData;
+    }));
   }
 
 }

@@ -19,6 +19,15 @@ import { RoomsComponent } from './home-log-in/rooms/rooms.component';
 import { UserRoomComponent } from './home-log-in/user-room/user-room.component';
 import { HomeMenuComponent } from './home-log-in/home-menu/home-menu.component';
 import { HomeContactComponent } from './home-log-in/home-contact/home-contact.component';
+//  Angular Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatButtonModule } from '@angular/material';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -36,14 +45,21 @@ import { HomeContactComponent } from './home-log-in/home-contact/home-contact.co
     RoomsComponent,
     UserRoomComponent,
     HomeMenuComponent,
-    HomeContactComponent
+    HomeContactComponent    
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

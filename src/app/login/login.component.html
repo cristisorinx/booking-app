@@ -1,54 +1,53 @@
 <div class="container">
-        <div class="row">
-                <div class="alert alert-danger 
-                        col-md-4 col-md-offset-4
-                        col-sm-6 col-sm-offset-3
-                        col-xs-10 col-xs-offset-1" *ngIf="error">
-                        <p class="text-center">{{ error }}</p>
-                </div>
-                <form 
-                class=" col-md-4 col-md-offset-4
-                        col-sm-6 col-sm-offset-3
-                        col-xs-10 col-xs-offset-1" 
-                #logInForm="ngForm"
-                (ngSubmit)="onSubmit()" 
-                > 
-                        <div class="form-group">
-                          <label>Email</label>
-                          <input
-                          ngModel
-                          name="email" 
-                          type="email" 
-                          class="form-control" 
-                          placeholder="Enter email"
-                          required
-                          email
-                          #email="ngModel"
-                          >
-                          <small *ngIf="!email.valid && email.touched">Enter a valid email.</small>
-                        </div>
-                
-                        <div class="form-group">
-                          <label>Password</label>
-                          <input 
-                          ngModel
-                          name="password"
-                          type="password" 
-                          class="form-control" 
-                          placeholder="Password"
-                          required
-                          minlength="8"
-                          #pwd="ngModel"
-                          >
-                          <small *ngIf="!pwd.valid && pwd.touched">The password length is smaller than 8 characters.</small>
-                        </div>
-
-                        <button 
-                        type="submit" 
-                        class="btn btn-primary"
-                        name="submit"
-                        [disabled]="!logInForm.valid"
-                        >Log In</button>
-                </form>
+    <div class="row">
+        <div class="alert alert-danger
+                col-md-4 col-md-offset-4
+                col-sm-6 col-sm-offset-3
+                col-xs-10 col-xs-offset-1" *ngIf="error">
+                <p class="text-center">{{ error }}</p>
         </div>
+        <form
+        class=" col-md-4 col-md-offset-4
+                col-sm-6 col-sm-offset-3
+                col-xs-10 col-xs-offset-1"
+        #logInForm="ngForm"
+        (ngSubmit)="onSubmit()"
+        >
+                <div class="form-group">
+                  <label>Email</label>
+                  <input
+                  ngModel
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  placeholder="Enter email"
+                  required
+                  email
+                  #email="ngModel"
+                  >
+                  <small *ngIf="!email.valid && email.touched">Enter a valid email.</small>
+                </div>
+
+                <div class="form-group">
+                  <label>Password</label>
+                  <input
+                  ngModel
+                  name="password"
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  required
+                  minlength="8"
+                  #pwd="ngModel"
+                  >
+                  <small *ngIf="!pwd.valid && pwd.touched">The password length is smaller than 8 characters.</small>
+                </div>
+                <button
+                type="submit"
+                class="btn btn-primary"
+                name="submit"
+                [disabled]="!logInForm.valid"
+                >Log In</button>
+        </form>
     </div>
+</div>

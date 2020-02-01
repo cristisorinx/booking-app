@@ -1,3 +1,11 @@
 #terms{
     margin-top: 10px;
 }
+
+input,textarea,select{
+  opacity: 0.945;
+}
+
+small{
+  color: black;
+}

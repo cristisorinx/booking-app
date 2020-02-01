@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
 import { ContactComponent } from './contact/contact.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
@@ -16,25 +15,27 @@ import { UserRoomComponent } from './home-log-in/user-room/user-room.component';
 import { HomeContactComponent } from './home-log-in/home-contact/home-contact.component';
 
 const appRoutes: Routes = [
-  {path:'', redirectTo:'/home', pathMatch:'full'},
-  {path:'contact', component: ContactComponent},
-  {path:'register', component: RegisterComponent},
-  {path:'login', component: LoginComponent},
-  {path:'loggedIn', 
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'contact', component: ContactComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'loggedIn',
     component: HomeLogInComponent,
     canActivate: [AuthGuard],
     children: [
-      {path:'account-info',component: AccountInfoComponent},
-      {path:'rooms',component: RoomsComponent},
-      {path:'contact',component: HomeContactComponent},
-      {path:'user-room',component: UserRoomComponent},
-      {path:'reg',component: AddStudentComponent},
-      {path:'auth',component: AuthComponent}
+      {path: '', redirectTo: '/loggedIn/home', pathMatch: 'full'},
+      {path: 'home', component: HomeComponent},
+      {path: 'account-info', component: AccountInfoComponent},
+      {path: 'rooms', component: RoomsComponent},
+      {path: 'contact', component: HomeContactComponent},
+      {path: 'user-room', component: UserRoomComponent},
+      {path: 'reg', component: AddStudentComponent},
+      {path: 'auth', component: AuthComponent}
     ]
   },
-  {path:'home', component: HomeComponent},
-  {path:'not-found', component: NotFoundComponent},
-  {path:'**', redirectTo:'/not-found'} 
+  {path: 'home', component: HomeComponent},
+  {path: 'not-found', component: NotFoundComponent},
+  {path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({

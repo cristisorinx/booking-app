@@ -18,22 +18,20 @@ export class AccountInfoComponent implements OnInit {
   constructor(private getData: GetUpdateService) { }
 
   ngOnInit() {
-    
+
     this.infoForm = new FormGroup({
-      
+
       'firstName': new FormControl(null),
       'lastName': new FormControl(null),
-      'CNP': new FormControl(null),      
+      'CNP': new FormControl(null),
       'age': new FormControl(null),
       'phoneNumber': new FormControl(null),
       'studDorm': new FormControl({value: null ,disabled: true}),
       'serialNumber': new FormControl({value: null ,disabled: true})
     });
-    
+
     this.getInfo();
   }
-      
-  
 
   onEdit(){
     this.viewMode = false;
@@ -41,15 +39,16 @@ export class AccountInfoComponent implements OnInit {
 
   onSave(){
     this.viewMode = true;
-    //save data 
+    // save data
 
     this.getData.getStudents().subscribe(
       respData =>{
         for(let key in respData){
-          if(respData[key].usNumber === this.usNumber)
+          if (respData[key].usNumber === this.usNumber) {
           this.id = respData[key].id;
+          }
         }
-      },error => {
+      }, error => {
         console.log(error);
       }, () => {
         this.getData.updateStudentData(this.id,this.infoForm).subscribe();
@@ -68,17 +67,19 @@ export class AccountInfoComponent implements OnInit {
       } = JSON.parse(localStorage.getItem('userData'));
 
       for(let key in respData){
-        if(userData.email === respData[key].email)
+        if (userData.email === respData[key].email) {
           this.usNumber = respData[key].usNumber;
+        }
       }
     },error => {
       console.log(error);
     }
     ,() => {
       this.getData.getStudents().pipe(map( respData =>{
-        for(let key in respData){
-        if(respData[key].usNumber === this.usNumber)
+        for (let key in respData){
+        if (respData[key].usNumber === this.usNumber) {
             return respData[key];
+        }
         }
         }))
       .subscribe(respData => {
@@ -91,8 +92,7 @@ export class AccountInfoComponent implements OnInit {
         studDorm: respData.studentDorm,
         serialNumber: respData.usNumber
       });
-        
-      } 
+      }
     );
     }
   );

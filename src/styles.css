@@ -2,14 +2,12 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
-    /* background-image: url('./image/ball-state-university.jpg');
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    color: rgb(0, 0, 0);
+
+    background-image: url('./image/castle-v2.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center; */
-
-    background-color: #f0f0f0;
-    /* background-image: radial-gradient(rgb(43, 40, 73) , #292b74 ); */
-
+    background-position: center;
 }

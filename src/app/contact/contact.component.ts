@@ -10,7 +10,7 @@ import { GetUpdateService } from '../shared/get-update.service';
 export class ContactComponent implements OnInit {
 
   displayed = false;
-  problemsType =['Account','Registration','Application','Other'];
+  problemsType = ['Account', 'Registration', 'Application', 'Other'];
   contactForm: FormGroup;
   error: string = null;
   message: string = null;
@@ -19,10 +19,10 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.contactForm = new FormGroup({
-      'userData': new FormGroup({
+        'userData': new FormGroup({
         'firstName': new FormControl(null, Validators.required),
         'lastName': new FormControl(null, Validators.required),
-        'email': new FormControl(null, [Validators.required,Validators.email])
+        'email': new FormControl(null, [Validators.required, Validators.email])
       }),
       'universityData': new FormGroup({
         'university': new FormControl(null, Validators.required),
@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit {
         'problemType': new FormControl(null)
       }),
       'problem': new FormControl(null, Validators.required),
-      'agreed': new FormControl(null,Validators.required)
+      'agreed': new FormControl(null, Validators.required)
     });
 
   }
@@ -43,13 +43,13 @@ export class ContactComponent implements OnInit {
       },
       error => {
         this.error = error.message;
-        console.log(error);        
+        console.log(error);
       },
       () => {
-        this.message = "Your message has been send . We'll try to respond or resolve your problem as soon as we can. Thank you !"
+        this.message = 'Your message has been send . We\'ll try to respond or resolve your problem as soon as we can. Thank you !';
         this.contactForm.reset();
       });
-    
+
   }
 
   displayTerms(){

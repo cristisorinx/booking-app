@@ -1,25 +1,39 @@
-<div>
-    <h2 class="text-center">You are distributed in student dorm : {{ studDorm }}</h2>
-    <p class="text-center">You can book in one of the rooms available</p>
+<hr>
+<mat-accordion>
+    <!-- 1st -->
+    <mat-expansion-panel *ngFor="let floor of floors; let f = index">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{floor}}
+        </mat-panel-title>
+        <mat-panel-description>
+          Expand to see the rooms on this floor
+        </mat-panel-description>
+      </mat-expansion-panel-header>
 
-    <div class="row">
-        <p>1st floor</p>
-    </div>
-    <hr>
-    <div class="row">
-        <p>2nd floor</p>
-    </div>
-    <hr>
-    <div class="row">
-        <p>3th floor</p>
-    </div>
-    <hr>
-    <div class="row">
-        <p>4th floor</p>
-    </div>
-    <hr>
-    <div class="row">
-        <p>5th floor</p>
-    </div>
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let i of firstFloor; let j = index">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+             {{ f +1 }}0{{ j + 1 }}
+            </mat-panel-title>
+            <mat-panel-description>
+              Expand to see the students in this room
+            </mat-panel-description>
+          </mat-expansion-panel-header>
 
-</div>
+          <!-- <mat-form-field> -->
+            <!-- <input matInput placeholder="First name"> -->
+            <p> {{ i.studName }} </p>
+          <!-- </mat-form-field> -->
+
+          <!-- <mat-form-field> -->
+            <!-- <input matInput placeholder="Age"> -->
+            <p> {{ i.university }} </p>
+          <!-- </mat-form-field> -->
+          <hr>
+          <button mat-button >Book in this room</button>
+        </mat-expansion-panel>
+      </mat-accordion>
+      </mat-expansion-panel>
+  </mat-accordion>

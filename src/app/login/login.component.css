@@ -10,6 +10,14 @@ div.alert {
     margin-top: 8%;
 }
 
+button{
+  background-color: #0c1c29e8;
+}
+
+small{
+  color:black;
+}
+
 @media(max-width: 480px){
     .row {
         padding-top: 30px;

@@ -3,9 +3,12 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 }
 
 #terms{
-    margin-top: 20px;
+    margin-top: 40px;
     margin-bottom: 20px;
     padding-right: 25px;
+    font-weight: bold;
+    font-size: 1.7rem;
+    color:black;
 }
 
 .btn.btn-primary{
@@ -14,6 +17,14 @@ input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched{
 
 #mainContainer{
     margin-top: 4%;
+}
+
+button{
+  background-color: #0c1c29e8;
+}
+
+small {
+  color: black;
 }
 
 @media(min-width: 992px){

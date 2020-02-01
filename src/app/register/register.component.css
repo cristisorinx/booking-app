@@ -4,6 +4,8 @@ input.ng-invalid.ng-touched{
 
 #terms{
     margin: 20px 0px;
+    font-size: 1.7rem;
+    color: black;
 }
 
 .container {
@@ -11,8 +13,9 @@ input.ng-invalid.ng-touched{
 }
 
 small {
-    color: black;
+  color: black;
 }
+
 button{
     background-color: #0c1c29e8;
 }
