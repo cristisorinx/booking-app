@@ -5,7 +5,7 @@
         </div>
             <form class="col-md-4 col-sm-6 col-sm-offset-4 col-md-offset-4" (ngSubmit)="onSubmit()" #f="ngForm" >
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Email</label>
+                      <label >Email</label>
                       <input
                       ngModel
                       type="email"
@@ -21,7 +21,7 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
+                      <label >Password</label>
                       <input
                       ngModel
                       type="password"
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Confirm Password</label>
+                      <label >Confirm Password</label>
                         <input
                         ngModel
                         type="password"
@@ -49,17 +49,15 @@
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Unic Serial Number</label>
+                      <label >Unic Serial Number</label>
                       <input
-                        ngModel
+                        [(ngModel)] = "usNumber"
                         type="text"
                         class="form-control"
                         placeholder="Unic Serial Number"
                         name="usNumber"
                         required
-                        #usNumber="ngModel"
                         [disabled]="isValid">
-
                       <small class="form-text text-muted">
                         Given by your University. * Example:  LM123456. *</small>
                       <div class="alert alert-success text-center"
@@ -76,9 +74,7 @@
                       class="form-check-input"
                       id="validate"
                       required
-                      (change)="onCheck($event)"
-                      [disabled]="!usNumber.touched && !usNumber.valid"
-                      >
+                      (change)="onCheck($event)">
                       <label
                       class="form-check-label"
                       > Validate Unic Serial Number.  </label>
@@ -90,8 +86,7 @@
                       type="checkbox"
                       class="form-check-input"
                       name="checked"
-                      required
-                      >
+                      required>
                       <label
                       class="form-check-label"
                       >Agree to <a (click) = "displayTerms()" style="color: darkblue;">terms & conditions</a> </label>

@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
 import { GetUpdateService } from '../shared/get-update.service';
@@ -19,10 +18,9 @@ export class RegisterComponent implements OnInit {
   @ViewChild('f', {static: false}) registerForm: NgForm;
   error: string = null;
   id: string = null;
+  usNumber = '';
 
-  constructor(private httpGet: HttpClient,
-              private httpPost: HttpClient,
-              private authService: AuthService,
+  constructor(private authService: AuthService,
               private router: Router,
               private getData: GetUpdateService,
               private updateData: GetUpdateService) {}
@@ -58,7 +56,7 @@ export class RegisterComponent implements OnInit {
     .subscribe(reg => {
       for (const key in reg) {
         if (reg[key].usNumber === this.registerForm.value.usNumber) {
-          if (reg[key].registred === false) {
+          if (reg[key].registred) {
             this.isValid = true;
             this.alreadyRegistred = false;
             this.id = reg[key].id;
@@ -81,10 +79,9 @@ export class RegisterComponent implements OnInit {
     if (!this.registerForm.valid) {
       return;
     }
-
     if (this.verifyPwd() && this.isValid) {
         this.authService.signUp(this.registerForm.value.email, this.registerForm.value.password)
-        .subscribe(resp => {
+        .subscribe(() => {
           this.isValid = false;
           this.router.navigate(['/login']);
         },
@@ -94,9 +91,9 @@ export class RegisterComponent implements OnInit {
         },
         () => {
           this.updateData.registerUserData(this.registerForm)
-          .subscribe(respData => {
-          this.registerForm.reset();
-          }
+          .subscribe(() => {
+            this.registerForm.reset();
+            }
           );
           this.updateData.updatePrimaryDb(this.id).subscribe();
         }

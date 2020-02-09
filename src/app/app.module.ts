@@ -27,7 +27,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import { MatIconModule } from '@angular/material/icon';
     RoomsComponent,
     UserRoomComponent,
     HomeMenuComponent,
-    HomeContactComponent    
+    HomeContactComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +59,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatGridListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

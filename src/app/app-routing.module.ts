@@ -16,6 +16,7 @@ import { HomeContactComponent } from './home-log-in/home-contact/home-contact.co
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'admin', component: AddStudentComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},

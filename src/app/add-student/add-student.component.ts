@@ -25,7 +25,7 @@ export class AddStudentComponent implements OnInit {
     this.formInput = this.regForm.value;
     console.log(this.formInput);
 
-    this.http.post<Student>('https://booking-app-11aa6.firebaseio.com/primaryDb.json',this.formInput)
+    this.http.post<Student>('https://booking-app-11aa6.firebaseio.com/primaryDb.json', this.formInput)
         .subscribe(respData =>{
           console.log(respData);
         },
@@ -50,7 +50,7 @@ export class AddStudentComponent implements OnInit {
     )
     .subscribe(reg => {
       console.log(reg);
-      } 
+      }
     );
   }
 
