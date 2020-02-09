@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 })
 export class AddStudentComponent implements OnInit {
 
-  @ViewChild('reg',{static: false}) regForm: NgForm;
+  @ViewChild('reg') regForm: NgForm;
   private formInput: Student;
   private error = null;
 

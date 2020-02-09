@@ -16,7 +16,7 @@ export class AuthComponent implements OnInit {
   constructor(private authService: AuthService,
     private updateData: GetUpdateService) { }
 
-  @ViewChild('authForm',{static: false}) form1: NgForm;
+  @ViewChild('authForm') form1: NgForm;
   ngOnInit() {
   }
 

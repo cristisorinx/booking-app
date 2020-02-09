@@ -52,6 +52,7 @@ export class RoomsComponent implements OnInit {
         .subscribe(respData => {
          this.studDorm = respData.studentDorm;
          this.getData.getStudentDormInfo(respData.studentDorm)
+         // tslint:disable-next-line: no-shadowed-variable
          .subscribe(respData => {
           for (const floor in respData) {
             this.floors.push(floor);
@@ -62,7 +63,7 @@ export class RoomsComponent implements OnInit {
                 console.log('entered in 1stfloor case');
 
                 // tslint:disable-next-line: forin
-                for (const i in respData[floor]){
+                for (const i in respData[floor]) {
                   this.firstFloor.push(respData[floor][i]);
                 }
                 console.log(this.firstFloor);
@@ -88,7 +89,7 @@ export class RoomsComponent implements OnInit {
       );
     }
 
-  private processRooms(respData: Object){
+  private processRooms(respData: Object) {
      // tslint:disable-next-line: forin
 
 

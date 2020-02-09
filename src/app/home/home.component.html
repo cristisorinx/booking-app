@@ -1,46 +1,50 @@
 <div class="container-fluid">
-    <h1 class="text-center">Welcome to the Booking-app !</h1>
+  <h1 class="text-center">Welcome to the Booking-app !</h1>
 
-    <p>We are glad that you choose to use our application for booking in your student dorm.</p>
+  <div id="carouselHome" class="carousel slide" data-ride="carousel"data-inerval="2000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carouselHome" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselHome" data-slide-to="1"></li>
+      <li data-target="#carouselHome" data-slide-to="2"></li>
+    </ol>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="../../assets/Palatul_Lloyd_-_Piata_Victoriei.jpg" alt="...">
+        <div class="carousel-caption">
+          <h3>University Politehnica Timisoara</h3>
+          <p>Established in 1920, shortly after the union of Romanian territories, in a European context marked by
+            the redefinition of states and by the aftermath of World War I, the Polytechnic School in Timisoara
+            -as was originally called - was the answer to one of the requirements of the Romanian society of the time,
+             namely the formation of engineers.</p>
         </div>
-        <div class="col-md-8">
-          <ngb-carousel *ngIf="images">
-            <ng-template ngbSlide>
-              <img [src]="images[0]" alt="Random first slide">
-              <div class="carousel-caption">
-                <h3>2 seconds between slides...</h3>
-                <p>This carousel uses customized default values.</p>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img [src]="images[1]" alt="Random second slide">
-              <div class="carousel-caption">
-                <h3>Mouse events...</h3>
-                <p>This carousel pause or resume on mouse events</p>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img [src]="images[2]"  alt="Random third slide">
-              <div class="carousel-caption">
-                <h3>No keyboard...</h3>
-                <p>This carousel uses customized default values.</p>
-              </div>
-            </ng-template>
-            <ng-template ngbSlide>
-              <img [src]="images[3]" alt="Random fourth slide">
-              <div class="carousel-caption">
-                <h3>And wrap after last slide.</h3>
-                <p>This carousel uses customized default values.</p>
-              </div>
-            </ng-template>
-          </ngb-carousel>
-               <div class="col-md-2">
+      </div>
+      <div class="item">
+        <img src="../../assets/castle-2.jpg" alt="...">
+        <div class="carousel-caption">
+          <h3>Castle</h3>
+          <p>Some awesome castle.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="../../assets/ball-state-university.jpg" alt="...">
+        <div class="carousel-caption">
+          <h3>Ball State University</h3>
+          <p>Established 1918 is a public research university in Muncie, Indiana.</p>
         </div>
       </div>
     </div>
+  </div> <!-- Carousel -->
 
+  <div class="container">
+    <h2>Informations</h2>
+    <h3>Here you can find the latest news:</h3>
+      <ul>
+        <li>1.First</li>
+        <li>2.Second</li>
+        <li>3.Third</li>
+      </ul>
+  </div>
 </div>

@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   error: string = null;
   noEmail = false;
 
-  @ViewChild('logInForm', {static: false}) logInForm: NgForm;
+  @ViewChild('logInForm') logInForm: NgForm;
 
   constructor(private httpPost: HttpClient,
               private authService: AuthService,

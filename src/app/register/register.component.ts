@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
   display = false;
   alreadyRegistred = false;
   isValid = false;
-  @ViewChild('f', {static: false}) registerForm: NgForm;
+  @ViewChild('f') registerForm: NgForm;
   error: string = null;
   id: string = null;
   usNumber = '';
