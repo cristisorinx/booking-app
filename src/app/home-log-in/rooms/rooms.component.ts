@@ -15,7 +15,7 @@ export class RoomsComponent implements OnInit {
   floors: string [] = [];
   rooms: Array<Object> = [];
   dormInfo: Array<any> = [];
-  firstFloor = [];
+  firstFloor: Array<any> = [];
 
   constructor(private getData: GetUpdateService) { }
 
@@ -54,7 +54,8 @@ export class RoomsComponent implements OnInit {
          this.getData.getStudentDormInfo(respData.studentDorm)
          // tslint:disable-next-line: no-shadowed-variable
          .subscribe(respData => {
-          for (const floor in respData) {
+           for (const floor in respData) { debugger
+           
             this.floors.push(floor);
             this.rooms.push(respData[floor]);
 

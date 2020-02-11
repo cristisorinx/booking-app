@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserRoomComponent implements OnInit {
 
-  roomId: string = '211A';
+  roomId: string = '*not booked yet*';
   constructor() { }
 
   ngOnInit() {

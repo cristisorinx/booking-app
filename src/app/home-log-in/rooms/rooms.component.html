@@ -15,7 +15,7 @@
         <mat-expansion-panel *ngFor="let i of firstFloor; let j = index">
           <mat-expansion-panel-header>
             <mat-panel-title>
-             {{ f +1 }}0{{ j + 1 }}
+             {{ f + 1 }}0{{ j + 1 }}
             </mat-panel-title>
             <mat-panel-description>
               Expand to see the students in this room
@@ -30,6 +30,7 @@
           <!-- <mat-form-field> -->
             <!-- <input matInput placeholder="Age"> -->
             <p> {{ i.university }} </p>
+            <p> {{ i.year }} </p>
           <!-- </mat-form-field> -->
           <hr>
           <button mat-button >Book in this room</button>
