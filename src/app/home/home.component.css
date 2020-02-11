@@ -13,3 +13,29 @@ h1{
   width: 100%;
   height: stretch;
 }
+
+#info {
+  color: lavender;
+}
+
+#info > h3 {
+  padding-left: 10px;
+}
+
+#infoList {
+  list-style: none;
+}
+
+.list-group-item {
+  padding-left: 20px;
+  width: 35%;
+  background-color: transparent;
+  border: none;
+  color: lavender;
+}
+
+.list-group-item:hover {
+  background-color: rgba(221, 218, 218, 0.178);
+  color: black;
+  font-weight: bold;
+}
