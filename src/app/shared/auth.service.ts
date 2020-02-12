@@ -63,7 +63,7 @@ export class AuthService {
       })
     );
 
-  }//login
+  }// login
 
   autoLogin() {
     const userData: {
@@ -90,7 +90,7 @@ export class AuthService {
         new Date().getTime();
       this.autoLogout(expirationDuration);
     }
-  }//autoLogin
+  }// autoLogin
 
   logout() {
     this.user.next(null);
@@ -100,14 +100,14 @@ export class AuthService {
     }
     this.tokenExpirationTimer = null;
     this.router.navigate(['/home']);
-  }//logout
+  }// logout
 
   autoLogout(expirationDuration: number) {
     this.tokenExpirationTimer = setTimeout(() => {
       this.logout();
     }, expirationDuration);
-  }//autoLogout
-  
+  }// autoLogout
+
   private handleAuthentication(
     email: string,
     userId: string,
@@ -119,7 +119,7 @@ export class AuthService {
     this.user.next(user);
     this.autoLogout(expiresIn * 1000);
     localStorage.setItem('userData', JSON.stringify(user));
-  }//handleAuthentication
+  }// handleAuthentication
 
   handleError(errorRes: HttpErrorResponse) {
     let errorMessage = 'An unknown error occurred!';
@@ -138,6 +138,6 @@ export class AuthService {
         break;
     }
     return throwError(errorMessage);
-  }//handleError
+  }// handleError
 
 }

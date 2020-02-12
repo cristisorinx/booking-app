@@ -68,7 +68,7 @@ export class GetUpdateService {
 
   registerProblem(contactForm: FormGroup){
     return this.http.post(
-      'https://booking-app-11aa6.firebaseio.com/problemsDb.json',contactForm.value);
+      'https://booking-app-11aa6.firebaseio.com/problemsDb.json', contactForm.value);
   }
 
   getStudentDormInfo(studentDorm: string){

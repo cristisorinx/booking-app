@@ -26,6 +26,7 @@ export class RegisterComponent implements OnInit {
               private updateData: GetUpdateService) {}
 
   ngOnInit() {
+    this.error = '';
   }
 
   displayTerms() {
@@ -54,19 +55,17 @@ export class RegisterComponent implements OnInit {
   validate() {
     this.getData.getStudents()
     .subscribe(reg => {
+      // tslint:disable-next-line: forin
       for (const key in reg) {
         if (reg[key].usNumber === this.registerForm.value.usNumber) {
-          if (reg[key].registred) {
+          if (reg[key].registred === false ) {
             this.isValid = true;
             this.alreadyRegistred = false;
             this.id = reg[key].id;
           } else { this.alreadyRegistred = true; }
+        } else {
+          this.error = 'This serial number doesn\'t exist';
         }
-      }
-      if (!this.isValid) {
-        this.error = 'This serial number does not exist .';
-      } else {
-        this.error = null;
       }
     },
     error => {
